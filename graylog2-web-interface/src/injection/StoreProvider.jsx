@@ -8,6 +8,7 @@ class StoreProvider {
       AlarmCallbacks: () => require('stores/alarmcallbacks/AlarmCallbacksStore'),
       AlertConditions: () => require('stores/alertconditions/AlertConditionsStore'),
       Alerts: () => require('stores/alerts/AlertsStore'),
+      Authentication: () => require('stores/authentication/AuthenticationStore'),
       ClusterOverview: () => require('stores/cluster/ClusterOverviewStore'),
       ConfigurationBundles: () => require('stores/configuration-bundles/ConfigurationBundlesStore'),
       Configurations: () => require('stores/configurations/ConfigurationsStore'),
