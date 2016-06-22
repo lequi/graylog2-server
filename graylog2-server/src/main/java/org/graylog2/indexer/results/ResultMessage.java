@@ -73,6 +73,15 @@ public class ResultMessage {
         return m;
     }
 
+    public static ResultMessage fromMessage(Message message, String index, Multimap<String, Range<Integer>> highlightFieldMap) {
+        final ResultMessage result = new ResultMessage();
+        result.setMessage(message);
+        result.setIndex(index);
+        result.setHighlightRanges(highlightFieldMap);
+
+        return result;
+    }
+
     public void setMessage(String id, Map<String, Object> message) {
         Map<String, Object> tmp = Maps.newHashMap();
         tmp.putAll(message);
@@ -118,6 +127,10 @@ public class ResultMessage {
         }
     }
 
+    public void setHighlightRanges(Multimap<String, Range<Integer>> highlightRanges) {
+        this.highlightRanges = highlightRanges;
+    }
+
     public void setIndex(String index) {
         this.index = index;
     }
@@ -128,5 +141,9 @@ public class ResultMessage {
 
     public String getIndex() {
         return index;
+    }
+
+    public Multimap<String, Range<Integer>> getHighlightRanges() {
+        return highlightRanges;
     }
 }
